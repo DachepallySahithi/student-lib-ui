@@ -55,48 +55,46 @@
         <button tabindex="0"> Get Student Details</button>
         <div class="get-by-filter">
             <label>
-            <input type="checkbox" id="idcb" name="get-by-filter" value="id" onchange="toggleFields()">
+            <input type="radio" id="idcb" name="get-by-filter" value="id" onchange="toggleFields()">
             ID
             </label><br>
 
+             <div id="idTextbox" class="hidden">
+                <input type="number" id="idTextboxtb" name="idTextboxtb" min="1">
+            </div>
+
             <label>
-            <input type="checkbox" id="deptcb" name="get-by-filter" value="dept" onchange="toggleFields()">
+            <input type="radio" id="deptcb" name="get-by-filter" value="dept" onchange="toggleFields()">
             Department
             </label><br>
 
+            <div id="deptDropdown" class="hidden">
+                    <select id="departmentdd" name="scienceLevel">
+                        <option value="" disabled selected>Select Department</option>
+                        <option value="IT">IT</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="ME">ME</option>
+                        <option value="EEE">EEE</option>
+                    </select>
+            </div>
+
             <label>
-            <input type="checkbox" id="semcb" name="get-by-filter" value="sem" onchange="toggleFields()">
+            <input type="radio" id="semcb" name="get-by-filter" value="sem" onchange="toggleFields()">
             Semester
             </label>
 
-  <div id="idTextbox" class="hidden">
-    <label for="idTextbox">ID:</label>
-    <input type="number" id="idTextboxtb" name="idTextboxtb">
-  </div>
+            <div id="semDropdown" class="hidden">
+                    <select name="sem" id="semdd" required>
+                        <option value="" disabled selected>Select Sem</option>
+                        <option value="1st sem">1st sem</option>
+                        <option value="2nd sem">2nd sem</option>
+                    </select>
+            </div>
 
-  <div id="deptDropdown" class="hidden">
-    <label for="deptDropdown">Department:</label>
-    <select id="departmentdd" name="scienceLevel">
-      <option value="" disabled selected>Select Department</option>
-      <option value="IT">IT</option>
-     <option value="CSE">CSE</option>
-                    <option value="ECE">ECE</option>
-                    <option value="ME">ME</option>
-                    <option value="EEE">EEE</option>
-    </select>
-  </div>
-
- <div id="semDropdown" class="hidden">
-    <label for="semDropdown">Semester:</label>
-                <select name="sem" id="semdd" required>
-                    <option value="" disabled selected>Select Sem</option>
-                    <option value="1st sem">1st sem</option>
-                    <option value="2nd sem">2nd sem</option>
-                </select>
- </div>
-
- <button>Submit</button>
+        <button onclick="renderCards()">Submit</button>
     </div>
     </div>
+<div id="cards-container" class="cards-container"></div>
 </body>
 </html>

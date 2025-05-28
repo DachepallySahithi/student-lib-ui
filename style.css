@@ -13,10 +13,12 @@ header{
   padding: 20px 0;
   text-align: center;
   font-size: 24px;
+
 }
 h1{
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 h2{
@@ -25,11 +27,14 @@ h2{
   color: #333;
 }
 button{
-  padding: 10px 20px;
+  padding: 14px 28px;
   font-size: 16px;
   background-color: black;
   color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 button:focus{
   outline: none;
@@ -45,11 +50,11 @@ button:focus{
   gap: 20px;
   margin-bottom: 30px;
 }
-.button-row {
+/*.button-row {
   display: flex;
   gap: 20px;
-  justify-content: center; 
-}
+  justify-content: center;
+}*/
 
 .row {
   display: flex;
@@ -58,31 +63,15 @@ button:focus{
 }
 
 .close {
-      float: right;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.button-container a,
-.logout-btn{
-  background-color: crimson;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 20px auto;
-  display: inline-block;
-  font-weight: bold;
-}
 .container {
   text-align: center;
   margin-top: 40px;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -102,10 +91,6 @@ button:focus{
 }
 .login-btn:hover{
   background-color: #004d99;
-}
-
-.logout-btn:hover{
-  background-color: darkred;
 }
 
 .menu{
@@ -170,7 +155,7 @@ button:focus{
 
 .login-container p {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .login-container a {
@@ -178,7 +163,7 @@ button:focus{
   text-decoration: none;
 }
 
-.login-container-student {
+.login-container-student { /* stud det.html*/
   width: 100%;
   height: 100%;
   padding: 30px;
@@ -186,7 +171,7 @@ button:focus{
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
   text-align: center;
-  display: none;
+  display: flex;
   position: fixed;
   z-index: 10000000;
   left: 0;
@@ -198,7 +183,7 @@ button:focus{
 
 }
 
-.login-content-student {
+.login-content-student { /*student details.html register student*/
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -209,9 +194,10 @@ button:focus{
 
 }
 
-.login-container-student h2 {
+.login-container-student h2 {/*register student*/
+  text-align: center;
   margin-bottom: 20px;
-  color: #041C32;
+  color: #345e85;
 }
 
 .login-container-student input {
@@ -220,27 +206,30 @@ button:focus{
   margin: 12px 0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 24px;
 }
 
-.login-container-student button {
+.login-container-student button {/*cancel  and create*/
   padding: 10px 20px;
-  background-color: #041C32;
-  color: #fff;
+  background-color: #0c0c24;
+  color: white;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
   margin-top: 12px;
 }
 
 .login-container-student button:hover {
-  background-color: #064663;
+  background-color: #1a1a3d;
 }
 
 .login-container-student p {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 16px;
+  color: #333;
+
 }
 
 .login-container-student a {
@@ -257,7 +246,6 @@ button:focus{
 .gender label{
   font-weight: bold;
 }
-
 
 .dob{
   margin-left: 20px;
@@ -396,3 +384,23 @@ button:hover {
 .hidden {
   display: none;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f4f4f9; color: #333; padding: 2rem; }
+.cards-container { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;  gap: 1.5rem; margin-top: 50px;}
+.card {  background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card-header { background: #1e2f42; color: #fff; padding: 1rem; }
+.card-header h2 { font-size: 1.25rem; margin-bottom: 0.25rem; color: #fff}
+.card-header .meta { font-size: 0.875rem; opacity: 0.85; }
+.card-body { padding: 1rem; }
+.info-group { margin-bottom: 1rem; }
+.info-group h3 { font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.25rem; }
+.info-list { list-style: none; }
+.info-list li { margin-bottom: 0.25rem; }
+.info-list li span.label { font-weight: bold; }
+.books-table { width: 100%; border-collapse: collapse; }
+.books-table th, .books-table td { border: 1px solid #e0e0e0; padding: 0.5rem; text-align: left; font-size: 0.875rem; }
+.books-table th { background: #fafafa; }
+.status-active { color: #27ae60; font-weight: bold; }
+.status-inactive { color: #c0392b; font-weight: bold; }
