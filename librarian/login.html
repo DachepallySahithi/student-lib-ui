@@ -9,7 +9,7 @@
   <body>
     <div class="login-container">
       <h2>Librarian Login</h2>
-      <form id="loginForm" onsubmit="librarianLogin(event)">
+      <form id="loginForm">
         <input type="email" id="email" placeholder="Email" required /><br />
         <input
           type="password"
@@ -17,7 +17,7 @@
           placeholder="Password"
           required
         /><br />
-        <button type="submit" onclick="librarianLogin()">Login</button>
+        <button type="button" onclick="librarianLogin()">Login</button>
       </form>
       <p>
         Don't have an account? <br />

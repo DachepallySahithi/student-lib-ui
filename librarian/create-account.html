@@ -11,25 +11,45 @@
     <div class="login-container">
       <h2>Create an Account</h2>
       <form id="librarianForm">
-        <input type="text" placeholder="Name" name="name" /><br />
-        <input type="email" placeholder="Email" name="email" /><br />
         <input
+          id="clname"
+          type="text"
+          placeholder="Name"
+          name="name"
+          required
+        /><br />
+        <input
+          id="clemail"
+          type="email"
+          placeholder="Email"
+          name="email"
+          required
+        /><br />
+        <input
+          id="clpassword"
           type="password"
           placeholder="Set Your Password"
           name="password"
+          required
         /><br />
         <div class="gender">
           <label for="gender">Gender:</label>
-          <input type="radio" id="female" name="gender" value="Female" />
+          <input
+            type="radio"
+            id="clfemale"
+            name="clgender"
+            value="Female"
+            required
+          />
           <label for="female">Female</label>
 
-          <input type="radio" id="male" name="gender" value="Male" />
+          <input type="radio" id="clmale" name="clgender" value="Male" />
           <label for="male">Male</label>
         </div>
 
         <div class="country-select">
           <label for="country">Country:</label>
-          <select name="country" id="country">
+          <select name="country" id="clcountry" required>
             <option value="" disabled selected>Select your country</option>
             <option value="India">India</option>
             <option value="United States">United States</option>
@@ -40,7 +60,7 @@
         </div>
         <br />
 
-        <button type="submit" onclick="createAccount()">Submit</button>
+        <button type="button" onclick="createAccount()">Submit</button>
       </form>
     </div>
   </body>

@@ -25,6 +25,7 @@ function addBook() {
   const available = document.getElementById("availablecb").checked;
   const authorId = document.getElementById("author").value;
   const cardId = document.getElementById("card").value;
+  console.log("Card ID: ", cardId);
   const requestData = {
     name: bookName,
     pages: pages,
@@ -54,6 +55,7 @@ function addBook() {
       }
     })
     .catch((error) => {
+      console.log(error);
       alert("Error while adding Book");
     });
 }
@@ -84,10 +86,10 @@ function updateBook() {
   })
     .then((response) => response.text())
     .then((data) => {
-      if (data === "Book updated successfully") {
-        alert("Book updated");
-      } else if (data === "Book not found") {
+      if (data === "Book not found") {
         alert("Book not found");
+      } else {
+        alert(data);
       }
     })
     .catch((error) => {

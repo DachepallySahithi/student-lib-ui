@@ -93,6 +93,7 @@ function printCard() {
 
         return response.blob().then((blob) => {
           //Converts the response body (the PDF byte stream) into a Blob object. blob() is an asynchronous operation, so we chain another .then() to handle it once the blob is ready.
+          //Binary Large Object
           const link = document.createElement("a");
           link.href = window.URL.createObjectURL(blob); //Generates a temporary URL representing the PDF blob in memory. Assigns this URL to the href attribute of the anchor tag.
           link.download = filename; //Sets the download attribute of the anchor tag, specifying the filename for the downloaded PDF.

@@ -30,20 +30,21 @@ function loginStudent() {
 
 // fetch student details when page loads
 window.onload = function () {
+  //window.location.pathname.contains("student-dashboard.html?studentId=")
   if (window.location.pathname.endsWith("student-dashboard.html")) {
     const urlParams = new URLSearchParams(window.location.search);
     const studentId = urlParams.get("studentId");
     fetch(`http://localhost:7777/student/apis/find/${studentId}`)
       .then((response) => response.json())
       .then((data) => {
-        document.getElementById("studentName").innerText = data.name;
-        document.getElementById("studentId").innerText = data.id;
-        document.getElementById("studentDept").innerText = data.department;
-        document.getElementById("studentSem").innerText = data.sem;
-        document.getElementById("studentEmail").innerText = data.email;
-        document.getElementById("studentGender").innerText = data.gender;
-        document.getElementById("studentDob").innerText = data.dob;
-        document.getElementById("studentCardId").innerText = data.card.id;
+        document.getElementById("studentName").innerText = data[0].name;
+        document.getElementById("studentId").innerText = data[0].id;
+        document.getElementById("studentDept").innerText = data[0].department;
+        document.getElementById("studentSem").innerText = data[0].sem;
+        document.getElementById("studentEmail").innerText = data[0].email;
+        document.getElementById("studentGender").innerText = data[0].gender;
+        document.getElementById("studentDob").innerText = data[0].dob;
+        document.getElementById("studentCardId").innerText = data[0].card?.id;
       })
       .catch((error) => {
         console.error("Error fetching student:", error);
