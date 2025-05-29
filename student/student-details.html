@@ -11,24 +11,24 @@
    <div class="container">
     <div class="row">
     <div class="action">
-        <button tabindex="0" onclick="createStudent()"> Create Student Account</button>
+        <button onclick="createStudentModal()"> Create Student Account</button>
         <div class="login-container-student" id="student-account-creation">
         <div class="login-content-student">
         <h2>Register Student</h2>
         <form>
-            <input type="name" placeholder="Name" required><br>
-            <input type="email" placeholder="Email" name="email"><br>
+            <input id="csname" name="csname" type="text" placeholder="Name" required><br>
+            <input id="csemail" type="email" placeholder="Email" name="csemail"><br>
             <div class="gender"> 
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="csfemale" name="csgender" value="female">
                 <label for="female">Female</label>
-                <input type="radio" id="male" name="gender" value="male">
+                <input type="radio" id="csmale" name="csgender" value="male">
                 <label for="male">Male</label>
             </div>
             <div class="dob">
-                <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+                <input type="date" id="csdob" name="csdob" placeholder="Date of Birth" required>
             </div>
             <div class="department-select">
-                <select name="department" id="department" required>
+                <select name="csdepartment" id="csdepartment" required>
                     <option value="" disabled selected>Select Department</option>
                     <option value="IT">IT</option>
                     <option value="CSE">CSE</option>
@@ -39,20 +39,27 @@
             </div>
 
             <div class="sem-select">
-                <select name="sem" id="sem" required>
+                <select name="csssem" id="cssem" required>
                     <option value="" disabled selected>Select Sem</option>
                     <option value="1st sem">1st sem</option>
                     <option value="2nd sem">2nd sem</option>
+                    <option value="3rd sem">3rd sem</option>
+                    <option value="4th sem">4th sem</option>
+                    <option value="5th sem">5th sem</option>
+                    <option value="6th sem">6th sem</option>
+                    <option value="7th sem">7th sem</option>
+                    <option value="8th sem">8th sem</option>
                 </select>
             </div>
             <button onclick="closeModal()">Cancel</button>
-            <button type="submit">Create</button>
+            <button type="button" onclick="createStudent()">Create</button>
         </form>
         </div>
         </div>
     </div><br>
     <div class="action">
-        <button tabindex="0"> Get Student Details</button>
+        <button onclick="showFilters()"> Get Student Details</button>
+        <div class="hidden" id="filterSection">
         <div class="get-by-filter">
             <label>
             <input type="radio" id="idcb" name="get-by-filter" value="id" onchange="toggleFields()">
@@ -69,7 +76,7 @@
             </label><br>
 
             <div id="deptDropdown" class="hidden">
-                    <select id="departmentdd" name="scienceLevel">
+                    <select id="departmentdd" name="departmentdd">
                         <option value="" disabled selected>Select Department</option>
                         <option value="IT">IT</option>
                         <option value="CSE">CSE</option>
@@ -89,10 +96,17 @@
                         <option value="" disabled selected>Select Sem</option>
                         <option value="1st sem">1st sem</option>
                         <option value="2nd sem">2nd sem</option>
+                        <option value="3rd sem">3rd sem</option>
+                        <option value="4th sem">4th sem</option>
+                        <option value="5th sem">5th sem</option>
+                        <option value="6th sem">6th sem</option>
+                        <option value="7th sem">7th sem</option>
+                        <option value="8th sem">8th sem</option>
                     </select>
             </div>
 
         <button onclick="renderCards()">Submit</button>
+    </div>
     </div>
     </div>
 <div id="cards-container" class="cards-container"></div>

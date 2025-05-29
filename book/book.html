@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Book</h1>
+
+      <!-- Add Book Row -->
+      <div class="row">
+        <div class="action">
+          <button id="addBookBtn">Add Book</button>
+          <div class="form">
+            <input id="bookname" type="text" placeholder="Book Name" />
+            <input
+              id="pages"
+              type="number"
+              placeholder="No. of Pages"
+              min="1"
+            />
+            <input id="publisher" type="text" placeholder="Publisher Name" />
+            <select name="genre" id="genre" required>
+              <option value="" disabled selected>Select Genre</option>
+              <option value="FICTION">Fiction</option>
+              <option value="NON_FICTION">Non-Fiction</option>
+              <option value="COMEDY">Comedy</option>
+              <option value="DRAMA">Drama</option>
+              <option value="HORROR">Horror</option>
+              <option value="MYSTERY">Mystery</option>
+              <option value="MYTHOLOGY">Mythology</option>
+              <option value="IT">IT</option>
+            </select>
+            <div class="available" id="available">
+              <input type="checkbox" id="availablecb" />
+              <label>Available</label>
+            </div>
+            <input id="author" type="number" placeholder="Author ID" min="1" />
+            <input id="card" type="number" placeholder="Card ID" min="1" />
+            <button id="addBookbtn" class="save" onclick="addBook()">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Update Book Row -->
+      <div class="row">
+        <div class="action">
+          <button id="updateBookBtn">Update Book</button>
+          <div class="form">
+            <input
+              id="updatebookId"
+              type="number"
+              placeholder="Book ID"
+              min="1"
+            />
+            <input
+              id="updatebookname"
+              type="text"
+              placeholder="New Book Name"
+            />
+            <input
+              id="updatepages"
+              type="number"
+              placeholder="New No. of Pages"
+            />
+            <input
+              id="updatepublisher"
+              type="text"
+              placeholder="New Publisher Name"
+            />
+            <select name="genre" id="updategenre" required>
+              <option value="" disabled selected>Select Genre</option>
+              <option value="FICTION">Fiction</option>
+              <option value="NON_FICTION">Non-Fiction</option>
+              <option value="COMEDY">Comedy</option>
+              <option value="DRAMA">Drama</option>
+              <option value="HORROR">Horror</option>
+              <option value="MYSTERY">Mystery</option>
+              <option value="MYTHOLOGY">Mythology</option>
+              <option value="IT">IT</option>
+            </select>
+            <div class="available" id="available">
+              <input type="checkbox" id="updateavailablecb" />
+              <label>Available</label>
+            </div>
+            <input
+              id="updateauthor"
+              type="number"
+              placeholder="Author ID"
+              min="1"
+            />
+            <input
+              id="updatecard"
+              type="number"
+              placeholder="Card ID"
+              min="1"
+            />
+            <button id="updateBookbtn" class="save" onclick="updateBook()">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete Book Row -->
+      <div class="row">
+        <div class="action">
+          <button id="deleteBookBtn">Delete Book Details</button>
+          <div class="form">
+            <input id="bookid" type="number" placeholder="Book ID" min="1" />
+            <button id="deleteBookbtn" class="save" onclick="deleteBook()">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

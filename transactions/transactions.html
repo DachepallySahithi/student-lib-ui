@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="action">
+          <button id="atbtn">Add Transaction</button>
+          <div class="form">
+            <input id="atcardid" type="number" placeholder="Card Id" />
+            <input id="atbookid" type="number" placeholder="Book Id" />
+            <input id="atduedate" type="date" placeholder="Due Date" />
+            <select name="transaction_type" id="transaction_type">
+              <option value="" disabled selected>
+                Select Transaction Type
+              </option>
+              <option value="ISSUE">Issue</option>
+              <option value="RETURN">Return</option>
+            </select>
+            <input id="atpenalty" type="number" placeholder="Penalty" />
+            <select name="transaction_status" id="transaction_status">
+              <option value="" disabled selected>
+                Select Transaction Status
+              </option>
+              <option value="SUCCESS">SUCCESS</option>
+              <option value="PENDING">PENDING</option>
+              <option value="FAILURE">FAILURE</option>
+            </select>
+            <button onclick="addTransaction()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

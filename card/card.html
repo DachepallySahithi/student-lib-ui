@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="container">
+      <h1>Card</h1>
+
+      <!-- Add Card -->
+      <div class="row">
+        <div class="action">
+          <button>Add Card</button>
+          <div class="form">
+            <input
+              id="addstudentid"
+              type="number"
+              min="1"
+              placeholder="StudentId"
+            /><label for="addcardStatus">Card Status:</label>
+            <select name="card status" id="addcardstatus">
+              <option value="" disabled selected>Select card status</option>
+              <option value="ACTIVE">Active</option>
+              <option value="DEACTIVE">Deactive</option>
+              <option value="BLOCKED">Blocked</option>
+              <option value="EXPIRED">Expired</option>
+            </select>
+            <button id="addcardbtn" class="save" onclick="addCard()">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Update Card -->
+      <div class="row">
+        <div class="action">
+          <button>Update Card</button>
+          <div class="form">
+            <input
+              id="updatecardid"
+              type="number"
+              placeholder="Card ID"
+              min="1"
+            />
+            <input
+              id="updatestudentid"
+              type="number"
+              placeholder="Student ID"
+              min="1"
+            />
+            <select name="card status" id="updatecardstatus">
+              <option value="" disabled selected>Select card status</option>
+              <option value="ACTIVE">Active</option>
+              <option value="DEACTIVE">Deactive</option>
+              <option value="BLOCKED">Blocked</option>
+              <option value="EXPIRED">Expired</option>
+            </select>
+            <button class="save" id="updatecardbtn" onclick="updateCard()">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete Card  -->
+      <div class="row">
+        <div class="action">
+          <button>Delete Card</button>
+          <div class="form">
+            <input id="delcardid" type="number" min="1" placeholder="Card ID" />
+            <button class="save" id="delcardbtn" onclick="deleteCard()">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="action">
+          <button tabindex="0">Print Card</button>
+          <div class="form">
+            <input
+              type="number"
+              min="1"
+              placeholder="Student ID"
+              id="printstudid"
+            />
+            <button class="save" id="printcardbtn" onclick="printCard()">
+              Print
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
