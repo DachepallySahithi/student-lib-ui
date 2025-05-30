@@ -1,3 +1,7 @@
+document.getElementById("atduedate").max = new Date()
+  .toISOString()
+  .split("T")[0];
+
 function addTransaction() {
   const cardId = document.getElementById("atcardid").value;
   const bookId = document.getElementById("atbookid").value;

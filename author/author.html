@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Author</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Author</h1>
+    <div class="container">
+      <button id="addAuthorBtn" type="button">Add Author</button>
+      <button id="updAuthorBtn" type="button">Update Author</button>
+      <button id="delAuthorBtn" type="button">Delete Author</button>
+    </div>
+
+    <div class="login-container" id="author-container">
+      <form id="addAuthorForm">
+        <h2>Add Author</h2>
+        <input
+          id="caname"
+          type="text"
+          placeholder="Name"
+          name="name"
+          required
+        /><br />
+        <div class="gender">
+          <label for="gender">Gender:</label>
+          <input
+            type="radio"
+            id="cafemale"
+            name="cagender"
+            value="Female"
+            required
+          />
+          <label for="female">Female</label>
+
+          <input type="radio" id="clmale" name="cagender" value="Male" />
+          <label for="male">Male</label>
+        </div>
+
+        <div class="country-select">
+          <label for="country">Country:</label>
+          <select name="country" id="cacountry" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="India">India</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="United Kingdom">United Kingdom</option>
+          </select>
+        </div>
+
+        <input
+          id="carating"
+          type="number"
+          placeholder="Rating"
+          name="carating"
+          min="1"
+          max="5"
+          required
+        /><br />
+
+        <button type="button" onclick="addAuthor()">Add</button>
+      </form>
+
+      <form id="updateAuthorForm">
+        <h2>Update Author</h2>
+        <input
+          id="uaid"
+          type="number"
+          placeholder="Author ID"
+          name="id"
+          required
+        /><br />
+        <input
+          id="uaname"
+          type="text"
+          placeholder="Name"
+          name="name"
+          required
+        /><br />
+        <div class="gender">
+          <label for="gender">Gender:</label>
+          <input
+            type="radio"
+            id="uafemale"
+            name="uagender"
+            value="Female"
+            required
+          />
+          <label for="female">Female</label>
+
+          <input type="radio" id="ulmale" name="uagender" value="Male" />
+          <label for="male">Male</label>
+        </div>
+
+        <div class="country-select">
+          <label for="country">Country:</label>
+          <select name="country" id="uacountry" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="India">India</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="United Kingdom">United Kingdom</option>
+          </select>
+        </div>
+
+        <input
+          id="uarating"
+          type="number"
+          placeholder="Rating"
+          name="carating"
+          min="1"
+          max="5"
+          required
+        /><br />
+
+        <button type="button" onclick="updateAuthor()">Update</button>
+      </form>
+
+      <form id="deleteAuthorForm">
+        <h2>Delete Author</h2>
+        <input
+          id="delid"
+          type="number"
+          placeholder="Author ID"
+          name="id"
+          required
+        /><br />
+
+        <button type="button" onclick="deleteAuthor()">Delete</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

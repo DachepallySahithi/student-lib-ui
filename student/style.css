@@ -26,6 +26,7 @@ h2 {
   color: #333;
 }
 button {
+  margin-left: 1rem;
   padding: 14px 28px;
   font-size: 16px;
   background-color: black;
@@ -227,13 +228,35 @@ button:focus {
   border-radius: 10px;
   font-size: 16px;
 }
+
+.radioFilter {
+  margin-left: 1rem;
+}
+
 .get-by-filter {
   display: flex;
-  margin-left: 30px;
 }
+
 .hidden {
   display: none;
 }
+
+.hidden input {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hidden select {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;

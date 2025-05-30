@@ -1,3 +1,48 @@
+document.getElementById("addStdModBtn").onclick = function () {
+  document.getElementById("student-account-creation").style.display = "flex";
+  document.getElementById("filterSection").style.display = "none";
+  document.getElementById("student-account-updation").style.display = "none";
+  document.getElementById("delsid").style.display = "none";
+};
+
+document.getElementById("showStdBtn").onclick = function () {
+  const btnDisplayProp = document.getElementById("filterSection").style.display;
+  if (btnDisplayProp === "flex")
+    document.getElementById("filterSection").style.display = "none";
+  else document.getElementById("filterSection").style.display = "flex";
+  document.getElementById("student-account-creation").style.display = "none";
+  document.getElementById("student-account-updation").style.display = "none";
+  document.getElementById("delsid").style.display = "none";
+};
+
+document.getElementById("cancelAdd").onclick = function () {
+  document.getElementById("student-account-creation").style.display = "none";
+};
+
+document.getElementById("updStdModBtn").onclick = function () {
+  document.getElementById("student-account-creation").style.display = "none";
+  document.getElementById("filterSection").style.display = "none";
+  document.getElementById("student-account-updation").style.display = "flex";
+  document.getElementById("delsid").style.display = "none";
+};
+
+document.getElementById("cancelUpd").onclick = function () {
+  document.getElementById("student-account-updation").style.display = "none";
+};
+
+document.getElementById("delStudbtn").onclick = function () {
+  document.getElementById("student-account-creation").style.display = "none";
+  document.getElementById("filterSection").style.display = "none";
+  document.getElementById("student-account-updation").style.display = "none";
+  const btnDisplayProp = document.getElementById("delsid").style.display;
+  if (btnDisplayProp === "flex")
+    document.getElementById("delsid").style.display = "none";
+  else document.getElementById("delsid").style.display = "flex";
+};
+
+document.getElementById("csdob").max = new Date().toISOString().split("T")[0];
+document.getElementById("usdob").max = new Date().toISOString().split("T")[0];
+
 // --- Student Login ---
 function loginStudent() {
   const email = document.getElementById("studentemail").value;
@@ -93,14 +138,6 @@ function printCard() {
     });
 }
 
-function createStudentModal() {
-  document.getElementById("student-account-creation").style.display = "flex";
-}
-
-function closeModal() {
-  document.getElementById("student-account-creation").style.display = "none";
-}
-
 function createStudent() {
   const name = document.getElementById("csname").value;
   const email = document.getElementById("csemail").value;
@@ -108,7 +145,6 @@ function createStudent() {
   const dob = document.getElementById("csdob").value;
   const dept = document.getElementById("csdepartment").value;
   const sem = document.getElementById("cssem").value;
-  console.log(name, email, gender, dob, dept, sem);
   const requestData = {
     name: name,
     dob: dob,
@@ -133,12 +169,53 @@ function createStudent() {
     });
 }
 
-function showFilters() {
-  if (document.getElementById("filterSection").classList.contains("hidden")) {
-    document.getElementById("filterSection").classList.remove("hidden");
-  } else {
-    document.getElementById("filterSection").classList.add("hidden");
-  }
+function updateStudent() {
+  const id = document.getElementById("usid").value;
+  const name = document.getElementById("usname").value;
+  const email = document.getElementById("usemail").value;
+  const gender = document.querySelector('input[name="usgender"]:checked').value;
+  const dob = document.getElementById("usdob").value;
+  const dept = document.getElementById("usdepartment").value;
+  const sem = document.getElementById("ussem").value;
+  const requestData = {
+    name: name,
+    dob: dob,
+    gender: gender,
+    email: email,
+    department: dept,
+    sem: sem,
+  };
+  fetch(`http://localhost:7777/student/apis/update/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestData),
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      if (data === "Student Updated Successfully") alert(data);
+    })
+    .catch((error) => {
+      alert(error);
+    });
+}
+
+function deleteStudent() {
+  const id = document.getElementById("delsidtb").value;
+  fetch(`http://localhost:7777/student/apis/delete/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      if (data === "Student Deleted Successfully") alert(data);
+    })
+    .catch((error) => {
+      alert(error);
+    });
 }
 
 function toggleFields() {
